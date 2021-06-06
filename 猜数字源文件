@@ -1,0 +1,26 @@
+import random
+
+n = random.randint(1, 10)
+num_input = int(input('请猜猜我的数字是什么：（是正整数）'))
+i = 1
+while num_input < 1 or num_input > 9:
+    print('请输入一个1到9的数字')
+    num_input = int(input())
+
+while n != num_input and i < 3:
+    i += 1
+    if n < num_input:
+        print("欸，大了大了。")
+    else:
+        print("欸，小了小了")
+    num_input = int(input('再来一次：'))
+    continue
+if n != num_input:
+    print('你没有机会了。')
+else:
+    print('答对了，你想要什么奖励？')
+
+while True:
+   last = input()
+   if last == 'quit':
+        break
